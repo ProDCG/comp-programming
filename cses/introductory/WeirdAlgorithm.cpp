@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-    int n;
+    long n;
     cin >> n;
     while (n != 1) {
         cout << n << ' ';
@@ -12,6 +12,6 @@ int main() {
             n = n * 3 + 1;
         }
     }
-    cout << 1;
+    cout << 1 << endl;
     return 0;
 }
