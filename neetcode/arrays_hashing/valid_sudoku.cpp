@@ -13,11 +13,14 @@ public:
                 char num = board[r][c];
                 if (num == '.') continue;
 
-                if (rows[r].count(num) || cols[c].count(num))
+                if (rows[r].count(num) || cols[c].count(num) || square[(r / 3) * 3 + (c / 3)].count(num)) return false;
 
                 rows[r].insert(num);
                 cols[c].insert(num);
+                square[(r / 3) * 3 + (c / 3)].insert(num);
             }
         }
+
+        return true;
     }
 };
