@@ -4,22 +4,23 @@ using namespace std;
 class Solution {
 public:
     bool isValid(string s) {
-        stack<char> val;
-        unordered_map<char, char> parens = {
+        stack<char> parens;
+        unordered_map<char, char> brackets = {
             {')', '('},
             {'}', '{'},
-            {']', '['}
-        };
+            {']', '['}};
 
-        for (const auto& c : s) {
-            if (parens.find(c) != parens.end()) {
-                if (val.empty() || val.top() != parens[c]) return false;
-                val.pop();
+        for (char c : s) {
+            if (brackets.find(c) != brackets.end()) {
+                if (parens.empty()) return false;
+                if (parens.top() != brackets[c]) return false;
+
+                parens.pop();
             } else {
-                val.push(c);
+                parens.push(c);
             }
         }
 
-        return val.empty();
+        return true;
     }
 };
