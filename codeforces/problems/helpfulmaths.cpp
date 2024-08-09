@@ -1,18 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+int a[105], n, i=2;
+
 int main() {
+    
+    while(cin>>a[n++]);
+    sort(a, a+n);
 
-    string s;
-    cin >> s;
-    int iter = s.length() / 2;
+    cout << a[1];
 
-    cout << s[s.length() - 1];
-
-    for (int i = iter; i > 0; i--) {
-        cout << '+' << s[i * 2 - 2];
+    for (;i<n;i++) {
+        cout << '+' << a[i];
     }
 
-
     return 0;
+
 }
